@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade|Jaldi:700');
+.game {
+	font: 14px "Century Gothic", Futura, sans-serif;
+	text-align: center;
+	background-image: url("https://static.pexels.com/photos/24424/pexels-photo-24424.jpg");
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+	-webkit-animation: fadein 4s;
+	/* Safari, Chrome and Opera > 12.1 */
+	-moz-animation: fadein 4s;
+	/* Firefox < 16 */
+	-ms-animation: fadein 4s;
+	/* Internet Explorer */
+	-o-animation: fadein 4s;
+	/* Opera < 12.1 */
+	animation: fadein 4s;
+	min-height: 100vh;
+	overflow: hidden;
+	font-family: 'Bungee Shade', cursive;
+	filter: brightness(1.0) saturate(10) blur(1px) contrast(2);
+}
+
+.game>h2 {
+	margin-left: 10px;
+	margin-right: 10px;
+	font-size: 100px;
+	margin-bottom: -100px;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+ol,
+ul {
+	list-style-type: none;
+	padding: 0
+}
+
+.status {
+	margin-bottom: 5px;
+}
+
+.game-board {
+	position: relative;
+	top: 50%;
+	transform: translateY(40%);
+	vertical-align: top;
+}
+
+.square {
+	background: #fff;
+	background: rgba(255, 255, 255, 0.3);
+	border: 1px solid #999;
+	border-radius: 8px;
+	font-size: 50px;
+	font-weight: bold;
+	line-height: 7px;
+	margin: 2px;
+	height: 100px;
+	padding: 0;
+	text-align: center;
+	width: 100px;
+	vertical-align: top;
+}
+
+.square p {
+	opacity: 100%
+}
+
+.square:focus {
+	outline: none;
+}
+
+.game-info {
+	margin-top: 130px;
+	color: white;
+	font-family: 'Jaldi', sans-serif;
+	font-size: 20px;
+}
+
+.game-info li {
+	color: black;
+	font-size: 17px;
+	margin: -10px;
+}
+
+.kbd-navigation .square:focus {
+	background: #ddd;
+}
+
+@keyframes fadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+
+/* Firefox < 16 */
+
+@-moz-keyframes fadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+
+/* Safari, Chrome and Opera > 12.1 */
+
+@-webkit-keyframes fadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+
+/* Internet Explorer */
+
+@-ms-keyframes fadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+
+/* Opera < 12.1 */
+
+@-o-keyframes fadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@media all and (min-width: 960px) {
+	.game>h2 {
+		font-size: 100px;
+	}
+}
+
+@media all and (max-width: 959px) and (min-width: 600px) {
+	.game>h2 {
+		font-size: 80px;
+	}
+}
+
+@media all and (max-width: 599px) and (min-width: 320px) {
+	.game>h2 {
+		font-size: 50px;
+		margin-bottom: -60px; 
+	}
+}
