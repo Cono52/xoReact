@@ -22,7 +22,7 @@
 	min-height: 100vh;
 	overflow: hidden;
 	font-family: 'Bungee Shade', cursive;
-	filter: brightness(1.0) saturate(10) blur(1px) contrast(2);
+	filter: brightness(1.0) saturate(3) blur(0px) contrast(1);
 }
 
 .game>h2 {
@@ -61,17 +61,34 @@ ul {
 	border-radius: 8px;
 	font-size: 50px;
 	font-weight: bold;
-	line-height: 7px;
+	line-height: 0px;
 	margin: 2px;
 	height: 100px;
 	padding: 0;
 	text-align: center;
 	width: 100px;
 	vertical-align: top;
+	user-select: none;
+	-webkit-user-select: none; /* webkit (safari, chrome) browsers */
+    -moz-user-select: none; /* mozilla browsers */
+    -khtml-user-select: none; /* webkit (konqueror) browsers */
+    -ms-user-select: none; /* IE10+ */
 }
 
-.square p {
-	opacity: 100%
+.flipped {
+	animation: flip 2.0s ease-in-out 0s 1 alternate;
+	-webkit-animation: flip 2.0s ease-in-out 0s 1 alternate;
+	-o-animation: flip 2.0s ease-in-out 0s 1 alternate;
+	animation: flip 2.0s ease-in-out 0s 1 alternate;
+}
+
+.fade-enter {
+	opacity: 0;
+}
+
+.fade-enter-active {
+	opacity: 1.0;
+	transition: 100ms ease-out all;
 }
 
 .square:focus {
@@ -93,6 +110,15 @@ ul {
 
 .kbd-navigation .square:focus {
 	background: #ddd;
+}
+
+@keyframes flip {
+	0% {
+		transform: rotateX(0deg);
+	}
+	100% {
+		transform: rotateX(180deg);
+	}
 }
 
 @keyframes fadein {

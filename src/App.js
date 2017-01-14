@@ -1,10 +1,26 @@
 import React, { Component } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import './App.css';
 
 function Square(props){
+  
+    const transitionOptions = {
+      transitionName: "fade",
+      transitionEnterTimeout: 100,
+      transitionLeaveTimeout: 100,
+      transitionAppear: true,
+      transitionAppearTimeout: 100 
+    };
+
     return (
-			<button id={props.id} className="square" onClick={() => props.onClick()}>
-        <p>{props.value}</p>
+      <button id={props.id} className="square" onClick={(e) => {
+        props.onClick()
+        e.target.className = "square flipped"
+        e.target.append()
+      }}>
+        <ReactCSSTransitionGroup {...transitionOptions}>
+          <p>{props.value}</p>
+        </ReactCSSTransitionGroup>
       </button>
     );
 }
@@ -49,7 +65,7 @@ class App extends Component {
   }
 
   makeAiMove() {
-    console.log("AI still thinking")
+    console.log() 
   }
 
   handleClick(i){
